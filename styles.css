@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-color: white;
     color: black;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.5s, color 0.5s; /* Smooth transition for background and text color */
 }
 
 header {
@@ -12,26 +12,25 @@ header {
     padding: 20px;
 }
 
-button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
 main {
-    padding: 20px;
+    padding: 20px; /* Reduced padding for mobile */
+    max-width: 800px; /* Limit width for better readability */
+    margin: auto; /* Center the main content */
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Increased margin for better separation */
+    padding: 20px; /* Add padding inside sections */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.5s; /* Smooth transition for background color */
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+/* Boxy design for mobile */
+@media (max-width: 600px) {
+    section {
+        background-color: #f0f0f0; /* Light gray background for sections */
+        border: 1px solid black; /* Add a border around sections */
+    }
 }
 
 /* Dark Mode Styles */
@@ -40,18 +39,51 @@ body.dark-mode {
     color: white;
 }
 
-body.dark-mode button {
-    background-color: white;
-    color: black;
+body.dark-mode section {
+    background-color: #333; /* Dark background for sections in dark mode */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+footer button {
+    margin-bottom: 10px; /* Space between button and text */
+    transition: background-color 0.5s, color 0.5s; /* Smooth transition for button */
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: black; /* Button background */
+    color: white; /* Button text color */
+    transition: background-color 0.5s, color 0.5s; /* Smooth transition for button */
+}
+
+body.dark-mode footer button {
+    background-color: white; /* Button background in dark mode */
+    color: black; /* Button text color in dark mode */
+}
+
+.inner-text-padding {
+    padding-left: 50px;
 }
 
 
+
+
+/* Responsive Design */
 @media (max-width: 600px) {
     header, main, footer {
         padding: 10px;
     }
 
-    button {
-        width: 100%;
+    footer button {
+        width: 100%; /* Full width button on mobile */
     }
 }
